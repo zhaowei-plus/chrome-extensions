@@ -1,0 +1,20 @@
+{
+	"name": "My Extension",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "background/bg.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://github.com/*"],
+            "js": ["content/github.com.js"]
+        }
+    ],
+    "permissions": ["contextMenus", "tabs"]
+}
